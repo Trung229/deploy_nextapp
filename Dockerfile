@@ -8,10 +8,6 @@ RUN npm install
 
 COPY . .
 
-ENV CI=true
-
-RUN npm test
-
 RUN npm run build  
 
 RUN echo HAPPY_CODE
