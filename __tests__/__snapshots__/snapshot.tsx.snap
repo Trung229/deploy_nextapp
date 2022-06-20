@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div>
+    Enter
+    <h2>
+      Welcome to my
+    </h2>
+    <form>
+      <label
+        aria-label="yahalo"
+        class="ok"
+      >
+        yahalo
+      </label>
+      <input
+        name="yahalo"
+        type="text"
+        value="John"
+      />
+    </form>
+  </div>
+</div>
+`;
