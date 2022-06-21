@@ -20,6 +20,7 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           command-prefix: yarn dlx
+          install-command: yarn
           browser: chrome
           build: yarn build
           start: yarn start
