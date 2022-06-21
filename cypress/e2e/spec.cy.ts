@@ -1,7 +1,7 @@
-describe('empty spec', () => {
+describe('Test call video', () => {
   it('passes', () => {
     cy.visit('https://example.cypress.io')
-    cy.get('a')
+    cy.get('h1')
   .contains('get')
   })
 })
