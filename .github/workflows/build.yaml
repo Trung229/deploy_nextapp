@@ -19,10 +19,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           # Specify Browser since container image is compile with Firefox
-          install: false
-          start: yarn start:test
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 200
-          browser: chrome
-          headless: true
-          record: true
+          runTests: false
+          build: yarn build
