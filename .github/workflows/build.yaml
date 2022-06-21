@@ -20,6 +20,9 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           build: npm i -D cypress
+          record: true
+          parallel: true
+          group: 'UI - Chrome'
         env:
           CYPRESS_RECORD_KEY: 2ef72930-02c0-4b2a-b3ea-ec0e881c3998
           # Recommended: pass the GitHub token lets this action correctly
