@@ -31,4 +31,18 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME}}
           password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN}}
-         
+      - name: setup docker Buildx
+        uses: docker/setup-buildx-action@v1
+        id: buildx
+
+      - name: build and push Docker image
+        uses: docker/build-push-action@v1
+        id: docker-build
+        with:
+          context: ./
+          file: ./Dockerfile
+          builder: ${{ steps.builx.output.name}}
+          push: true
+          tags: ${{secrets.DOCKERHUB_USERNAME}}/docker-deploy-full-crown 
+      - name: verify
+        run: echo done ${{steps.docker-build.output.digest}}, Happy to code
