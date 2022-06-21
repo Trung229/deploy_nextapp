@@ -8,10 +8,9 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build  
+RUN yarn build  
 
 RUN echo HAPPY_CODE
-
 
 EXPOSE 3000
 

@@ -17,7 +17,7 @@ Sentry.init({
   beforeSend(event, hint) {
     // Check if it is an exception, and if so, show the report dialog
     if (event.exception) {
-      Sentry.showReportDialog({ eventId: event.event_id, title: 'Hey Bitch', subtitle: 'you made my app crash', subtitle2: 'you want to piece of me ?', labelName: 'Enter your name', labelEmail: 'Enter your email', labelComments: 'What come?', labelClose: 'close, please', labelSubmit: 'go' });
+      Sentry.showReportDialog({ eventId: event.event_id, title: 'Hey', subtitle: 'you made my app crash', subtitle2: 'you want to piece of me ?', labelName: 'Enter your name', labelEmail: 'Enter your email', labelComments: 'What come?', labelClose: 'close, please', labelSubmit: 'go' });
     }
     return event;
   },
