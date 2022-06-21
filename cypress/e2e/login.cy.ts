@@ -6,6 +6,6 @@ describe('Test get images', () => {
         .click()
         cy.get(".action-email")
         .type("trungpham@gmail.com")
-        .should('have.value','trungpham1@gmail.com')
+        .should('have.value','trungpham@gmail.com')
     })
   })

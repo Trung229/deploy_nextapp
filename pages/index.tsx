@@ -16,7 +16,7 @@ const Home = () => {
       </Head>
       <div >
         Enter
-        <h2>Welcome to my {a}</h2>
+        <h2 role="heading">Welcome to my</h2>
 
         <form>
           <label aria-label="yahalo" className="ok">yahalo</label>
