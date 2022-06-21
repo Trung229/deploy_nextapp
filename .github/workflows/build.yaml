@@ -20,3 +20,8 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           build: npm i -D cypress
+        env:
+          CYPRESS_RECORD_KEY: 2ef72930-02c0-4b2a-b3ea-ec0e881c3998
+          # Recommended: pass the GitHub token lets this action correctly
+          # determine the unique run id necessary to re-run the checks
+          GITHUB_TOKEN: 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
