@@ -7,18 +7,7 @@
     "test": "jest --watchAll",
     "test:ci": "jest --ci"
   },
-  "jest": {
-    "verbose": true,
-    "testMatch": [
-      "**/?(*.)(spec|test).js?(x)",
-      "**/test/**/*.js?(x)"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/.+/helpers/",
-      "/config/"
-    ]
-  },
+
   "dependencies": {
     "babel": "^6.23.0",
     "next": "latest",
