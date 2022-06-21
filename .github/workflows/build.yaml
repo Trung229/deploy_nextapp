@@ -23,7 +23,6 @@ jobs:
           # Specify Browser since container image is compile with Firefox
           build: npm i -D cypress
           record: true
-          parallel: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # Recommended: pass the GitHub token lets this action correctly
