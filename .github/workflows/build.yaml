@@ -20,4 +20,4 @@ jobs:
         with:
           # Specify Browser since container image is compile with Firefox
           runTests: false
-          build: yarn build
+          build: npm i -D cypress
