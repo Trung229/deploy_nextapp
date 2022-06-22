@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
-
+import useTrans from 'public/hooks/useTrans';
 
 const Home = () => {
-  const a: number = 1;
+  const trans = useTrans()
   return (
     <>
       <Head>
@@ -15,7 +15,7 @@ const Home = () => {
       </Head>
       <div >
         Enter
-        <h2 role="heading">Welcome to my</h2>
+        <h2 role="heading">{trans.home.title}</h2>
 
         <form>
           <label aria-label="yahalo" className="ok">yahalo</label>
