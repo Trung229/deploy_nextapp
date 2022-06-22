@@ -1,19 +1,18 @@
-FROM node:16.15.1
+FROM node:17
 
 WORKDIR /usr/local/app
 
+RUN curl -sL https://sentry.io/get-cli/ | bash
+
 COPY  package.json .
 
-
-RUN ls -a 
-
-RUN npm install
+COPY yarn.lock . 
 
 COPY . .
 
-RUN npm run build  
+RUN yarn
 
-RUN echo HAPPY_CODE
+RUN yarn build  
 
 EXPOSE 3000
 

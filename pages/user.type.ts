@@ -14,3 +14,7 @@ export interface userType {
     phone: string;
     website: string;
 }
+
+export default function hold(){
+    return 'ok'
+}

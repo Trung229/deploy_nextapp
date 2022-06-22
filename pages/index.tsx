@@ -105,6 +105,7 @@ const Home = (props: any) => {
             </Select>
           </FormControl>
         </div>
+        <button onClick={() => { throw new Error('Required') }}>Error</button>
       </div >
     </>
   )
