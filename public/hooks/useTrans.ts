@@ -3,7 +3,7 @@ import en from '../lang/en'
 import vi from '../lang/vi'
 
 const useTrans = () => {
-    const { locale } = useRouter()
+    const { locale } = useRouter() || []
 
 
     const trans = locale === 'vi' ? vi : en

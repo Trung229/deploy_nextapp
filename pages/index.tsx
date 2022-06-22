@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import useTrans from 'public/hooks/useTrans';
+import useTrans from '../public/hooks/useTrans';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -60,35 +60,40 @@ const Home = (props: any) => {
       <div >
         <h2 role="heading">{trans.home.title}</h2>
         <div style={{ width: "60%", marginTop: 20, marginLeft: 20 }}>
-          <TableContainer component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
-              <TableHead>
-                <TableRow>
-                  <TableCell>{trans.table.name}</TableCell>
-                  <TableCell align="right">{trans.table.age}</TableCell>
-                  <TableCell align="right">{trans.table.email}</TableCell>
-                  <TableCell align="right">{trans.table.phone}</TableCell>
-                  <TableCell align="right">{trans.table.address}</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {users.map((row: userType) => (
-                  <TableRow
-                    key={row.id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
-                    <TableCell align="right">{row.email}</TableCell>
-                    <TableCell align="right">{row.phone}</TableCell>
-                    <TableCell align="right">{row.website}</TableCell>
-                    <TableCell align="right">{row.username}</TableCell>
-                  </TableRow>
-                ))}
-              </TableBody>
-            </Table>
-          </TableContainer>
+          {
+            users ?
+              <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>{trans.table.name}</TableCell>
+                      <TableCell align="right">{trans.table.age}</TableCell>
+                      <TableCell align="right">{trans.table.email}</TableCell>
+                      <TableCell align="right">{trans.table.phone}</TableCell>
+                      <TableCell align="right">{trans.table.address}</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {users.map((row: userType) => (
+                      <TableRow
+                        key={row.id}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                      >
+                        <TableCell component="th" scope="row">
+                          {row.name}
+                        </TableCell>
+                        <TableCell align="right">{row.email}</TableCell>
+                        <TableCell align="right">{row.phone}</TableCell>
+                        <TableCell align="right">{row.website}</TableCell>
+                        <TableCell align="right">{row.username}</TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+              :
+              <h1>Loading....</h1>
+          }
         </div>
         <div style={{ width: 400, display: 'flex', justifyContent: 'center', marginTop: 20, marginLeft: 10 }}>
           <FormControl fullWidth>
