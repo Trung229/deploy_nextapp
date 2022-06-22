@@ -2,17 +2,17 @@ FROM node:17
 
 WORKDIR /usr/local/app
 
-RUN curl -sL https://sentry.io/get-cli/ | bash
+# RUN curl -sL https://sentry.io/get-cli/ | bash
 
 COPY  package*.json .
 
-COPY yarn.lock . 
+# COPY yarn.lock . 
+
+RUN npm install
 
 COPY . .
 
-RUN yarn
-
-RUN yarn build  
+RUN npm run build
 
 EXPOSE 3000
 
