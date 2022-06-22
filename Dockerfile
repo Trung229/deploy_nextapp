@@ -4,7 +4,7 @@ WORKDIR /usr/local/app
 
 RUN curl -sL https://sentry.io/get-cli/ | bash
 
-COPY  package.json .
+COPY  package*.json .
 
 COPY yarn.lock . 
 
