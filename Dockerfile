@@ -1,14 +1,17 @@
-FROM node:17
+FROM node:16.15.1
 
 WORKDIR /usr/local/app
 
-COPY  package*.json .
+COPY  package.json .
+
+
+RUN ls -a 
 
 RUN npm install
 
 COPY . .
 
-RUN yarn build  
+RUN npm run build  
 
 RUN echo HAPPY_CODE
 

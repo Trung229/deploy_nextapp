@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { withSentry } from '@sentry/nextjs';
+
 
 const Home = () => {
-  console.log("===>", withSentry);
   const a: number = 1;
   return (
     <>
