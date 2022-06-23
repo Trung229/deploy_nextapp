@@ -11,7 +11,7 @@ jobs:
       - name: Use Nodeabc
         uses: actions/setup-node@v3
         with: 
-          node-version: '16.15.1'
+          node-version: '17.x'
       - run: npm install
       - run: npm run build
       - run: yarn test:ci
