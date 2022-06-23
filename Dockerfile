@@ -6,6 +6,8 @@ WORKDIR /usr/local/app
 
 COPY  package*.json .
 
+RUN ls -a
+
 COPY yarn.lock . 
 
 RUN npm install 

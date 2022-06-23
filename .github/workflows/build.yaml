@@ -11,9 +11,9 @@ jobs:
       - name: Use Nodeabc
         uses: actions/setup-node@v3
         with: 
-          node-version: '12.x'
+          node-version: '17.x'
       - run: yarn
-      - run: npm build
+      - run: yarn build
       - run: yarn test:ci
       - name: Cypress run
         uses: cypress-io/github-action@v4
