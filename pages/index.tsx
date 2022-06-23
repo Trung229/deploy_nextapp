@@ -39,6 +39,7 @@ const Home = (props: any) => {
   const trans = useTrans();
   const router = useRouter();
   const [age, setAge] = React.useState('vn')
+  const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
   const handleChange = (event: SelectChangeEvent) => {
     if (event.target.value === 'en') {
       router.push('/', '/en', { locale: 'en' })
