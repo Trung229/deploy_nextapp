@@ -15,7 +15,7 @@ jobs:
       - run: npm install
       - run: npm ci
       - run: ls -a
-      - run: cat packages.json
+      - run: cat package.json
       - run: npm run build
       - run: yarn test:ci
       - name: Cypress run
