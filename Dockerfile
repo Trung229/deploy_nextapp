@@ -2,7 +2,7 @@ FROM node:17 as builder
 
 WORKDIR /usr/local/app
 
-# RUN curl -sL https://sentry.io/get-cli/ | bash
+RUN curl -sL https://sentry.io/get-cli/ | bash
 
 COPY  package*.json .
 
