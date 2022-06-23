@@ -1,4 +1,4 @@
-FROM node:17
+FROM node:17 as builder
 
 WORKDIR /usr/local/app
 
@@ -6,14 +6,27 @@ WORKDIR /usr/local/app
 
 COPY  package*.json .
 
-# COPY yarn.lock . 
+COPY yarn.lock . 
 
-RUN npm install
+RUN npm install 
+
 
 COPY . .
 
 RUN npm run build
 
+FROM node:lts-alpine3.15 
+
+WORKDIR /opt/app
+
+COPY  --from=builder /usr/local/app/package.json ./
+
+COPY --from=builder /usr/local/app/.next ./.next
+
+RUN npm install --production
+
+RUN ls -a
+
 EXPOSE 3000
 
-CMD ["sh","-c","yarn start"]
+CMD ["npm","run","start"]
